@@ -684,7 +684,7 @@ def apply_binary_patches(binary_path: Path, custom_name: str, extended: bool = F
 def configure_arch(frida_dir: Path, arch: str, ndk_path: Path):
     log(f"Configuring for {arch}...", "STEP")
     run(
-        f"./configure --host={arch} -- -Dfrida-core:compat=disabled",
+        f"./configure --host={arch} -- -Dcompat=disabled",
         cwd=str(frida_dir),
         env={"ANDROID_NDK_ROOT": str(ndk_path)},
     )
